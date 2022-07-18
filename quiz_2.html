@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>POEM</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,initial-scale=1" user-scaleable="no">
+    <!-- 뷰포트를 디바이스 너비에 맞추어 지정, 줌인줌아웃불가 -->
+    <link rel="stylesheet" type="text/css" href="style/style.css"/>
+
+    <!-- css파일 연결 -->
+    <!-- JQuery tabs https://jqueryui.com/tabs/ -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+
+        <!-- Bootstrap radio button https://www.w3schools.com/bootstrap/bootstrap_forms_inputs.asp -->
+
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+  </head>
+  <body>
+    <!--휴대폰 돌리기 화면-->
+    <main id = "main">
+      <div class="container">
+
+        <div id="promptTurn">
+            <div id="promptBox">
+              <br>
+              <br>
+                <p>모바일에서 접속하시거나<br>휴대폰을 돌려주세요!</p>
+            </div>
+        </div>
+
+
+
+      <div id="startScreen">
+        <h1><시인 심리테스트></h1>
+        <img src="TitlePageImage.jpg" width=40% height=40%>
+        <p>본 심리테스트는 국어 시간에 배운 시인들 12명 중<br>자신에게 맞는 시인을 추천해주는 사이트입니다.</p>
+        <script>
+            $(document).ready(function() {
+              $('#div_question1').hide();
+              $('#endScreen_0').hide();
+              $('#endScreen_1').hide();
+              $('#endScreen_2').hide();
+              $('#endScreen_3').hide();
+              $('#endScreen_4').hide();
+              $("#endScreen_5").hide()
+              $("#endScreen_6").hide()
+              $("#endScreen_7").hide()
+              $("#endScreen_8").hide()
+              $("#endScreen_9").hide()
+              $("#endScreen_10").hide()
+              $("#endScreen_11").hide()
+            });
+        </script>
+        <button class="start" onclick="toggle1()">start</button>
+      </div>
+
+
+
+
+
+
+
+<div class="container" id="tabs-1">
+
+  <div class="container" id="div_question1">
+    <br>
+    <br>
+      <h2>여름방학을 떠올렸을 때 가장 먼저 하고 싶은 것은?</h2>
+    <br>
+
+
+      <form>
+        <div class="radio"><label><input type="radio" name="optradio1" value="option1_1">1. 공부</label></div>
+          <div class="radio"><label><input type="radio" name="optradio1" value="option1_2">2. 여행</label></div>
+          <div class="radio"><label><input type="radio" name="optradio1" value="option1_3">3. 운동</label></div>
+          <div class="radio"><label><input type="radio" name="optradio1" value="option1_4">4. 휴식</label></div>
+      </form>
+      <input class = "btn-primary" type="button" id="btn_next1" data-dismiss="modal" value="다음">
+  </div>
+
+  <div class="container" id="div_question2" hidden>
+      <h2>개학식 날이 밝았다. 학교에 생각보다 일찍 도착했는데 이 시간 동안 할 것은?</h2>
+
+      <form>
+          <div class="radio"><label><input type="radio" name="optradio2" value="option2_1">1. 자가진단</label></div>
+          <div class="radio"><label><input type="radio" name="optradio2" value="option2_2">2. 친구들과 인사하기</label></div>
+          <div class="radio"><label><input type="radio" name="optradio2" value="option2_3">3. 창 밖을 바라보기</label></div>
+          <div class="radio"><label><input type="radio" name="optradio2" value="option2_4">4. 내가 일찍 도착했을 리가 없다.</label></div>
+      </form>
+      <input class = "btn-primary" type="button" id="btn_next2" data-dismiss="modal" value="다음">
+
+  </div>
+
+  <div class="container" id="div_question3" hidden>
+      <h2>선생님과의 면담날이다. 내가 건낼 인사말은?</h2>
+
+      <form>
+          <div class="radio"><label><input type="radio" name="optradio3" value="option3_1">1. 보고싶었어요!</label></div>
+          <div class="radio"><label><input type="radio" name="optradio3" value="option3_2">2. 선생님 더 예뻐지셨네요/ 잘생겨지셨어요.</label></div>
+          <div class="radio"><label><input type="radio" name="optradio3" value="option3_3">3. 방학 동안 어떻게 지내셨어요?</label></div>
+          <div class="radio"><label><input type="radio" name="optradio3" value="option3_4">4. 인사를 하지 않는다.</label></div>
+      </form>
+      <input class = "btn-primary" type="button" id="btn_next3" data-dismiss="modal" value="다음">
+
+  </div>
+
+  <div class="container" id="div_question4" hidden>
+      <h2>수학여행 하루 전이다. 내일 어떤 옷을 입고 갈것인가? </h2>
+
+      <form>
+          <div class="radio"><label><input type="radio" name="optradio4" value="option4_1">1. 교복</label></div>
+          <div class="radio"><label><input type="radio" name="optradio4" value="option4_2">2. 가장 편한 옷</label></div>
+          <div class="radio"><label><input type="radio" name="optradio4" value="option4_3">3. 친구의 추천을 받는다.</label></div>
+          <div class="radio"><label><input type="radio" name="optradio4" value="option4_4">4. 이번 수학여행의 주인공은 나다.</label></div>
+      </form>
+      <input class = "btn-primary" type="button" id="btn_next4" data-dismiss="modal" value="다음">
+  </div>
+
+  <div class="container" id="div_question5" hidden>
+      <h2>시험 날이다. 아침 식사로 내가 먹고갈 것은?</h2>
+
+      <form>
+          <div class="radio"><label><input type="radio" name="optradio5" value="option5_1">1. 간단한 식사</label></div>
+          <div class="radio"><label><input type="radio" name="optradio5" value="option5_2">2. 7첩 반상</label></div>
+          <div class="radio"><label><input type="radio" name="optradio5" value="option5_3">3. 시험 잘보기 기원 떡</label></div>
+          <div class="radio"><label><input type="radio" name="optradio5" value="option5_4">4. 먹지 않는다.</label></div>
+      </form>
+      <input class = "btn-primary" type="button" id="btn_next5" data-dismiss="modal" value="다음">
+  </div>
+
+  <div class="container" id="div_questionlast" hidden>
+        <h2>축제날이다. 무대를 하나 해야하는데 내가 할 무대는?</h2>
+
+          <form>
+            <div class="radio"><label><input type="radio" name="optradiolast" value="optionlast_1">1. 댄스 공연</label></div>
+            <div class="radio"><label><input type="radio" name="optradiolast" value="optionlast_2">2. 무술</label></div>
+            <div class="radio"><label><input type="radio" name="optradiolast" value="optionlast_3">3. 노래 공연</label></div>
+            <div class="radio"><label><input type="radio" name="optradiolast" value="optionlast_4">4. 마술</label></div>
+          </form>
+            <input class = "btn-primary" type="button" id="btn_next_last" data-dismiss="modal" value="결과를_보여주세요">
+
+  </div>
+
+  <script>
+     function toggle1() {
+       $("#startScreen").hide()
+       $("#div_question1").show()
+     }
+   </script>
+
+
+  <hr>
+  <!--<div id="div_result">결과는 ?</div>-->
+
+
+</div><!--end of tabs-1-->
+
+
+</div><!--end of container-->
+
+
+  <script>
+
+  function toggle1() {
+   $("#startScreen").hide()
+   $("#div_question1").show()
+  }
+
+
+  </script>
+  <div class="container" id="endScreen_0">
+    <h1><심리테스트 결과></h1>
+    <img src="0.jpg" width=40% height=40%>
+    <p>당신에게 시인 윤동주를 추천합니다! </p>
+
+     <p>학업, 성찰, 독립운동의 시인 <br><br>
+     수업시간에 배운 작품: 쉽게 쓰여진 시, 길, 등<br>
+     연희전문 문과를 졸업한 뒤 일제강점기에 ‘하늘과 바람과 별과 시’를 저술한 시인이다. <br>
+     대표 작품으로는 ‘서시’, ‘별 헤는 밤’, ‘참회록’ 등이 있다. <br>
+     남 앞에 나서는 것을 별로 좋아하지 않는 내성적 성격이었지만, <br>
+     어려운 상황에서도 저항시를 저술하는 의지와 뜻을 보여주었고, <br>
+     자신이 옳다고 생각한 일은 망설임 없이 행동한 시인이었다. </p>
+     <img src="0_1.jpg" width=40% height=40%>
+     <br>
+
+  </div>
+
+  <div class="container" id="endScreen_1">
+    <h1><심리테스트 결과></h1>
+    <img src="1.jpg" width=40% height=40%>
+    <p>당신에게 시인 이상을 추천합니다!</p>
+
+    <p>초현실주의, 세태에 대한 비판, 대담한 시인<br><br>
+     수업시간에 배운 작품: 조춘점묘<br>
+     본명은 김해경으로 일제강점기에 활동한 시인, 소설가, 수필가, 건축가, 화가이다.<br> 
+     이상은 기존 문법 파괴, 수학적 기호 사용, 전문 용어 및 외국어 사용 등으로 그 당시 문학계에 신선한 충격을 준 모더니즘 문학의 대표 주자이다. <br>
+     대표 작품으로는 ‘이런시’, <슬픈 이야기>, ‘오감도’ 등이 있다.</p>
+     <img src="1_1.jpg" width=40% height=40%><br>
+
+  </div>
+
+  <div class="container" id="endScreen_2">
+    <h1><심리테스트 결과></h1>
+    <img src="2.jpg" width=40% height=40%>
+    <p>당신에게 시인 이항복을 추천합니다!</p>
+
+    <p>연군, 그리움<br><br>
+     수업시간에 배운 작품: 시조<br>
+     조선 승정원, 동부승지, 당상관을 거쳐 영의정까지 오르게 된 조선의 문신, 정치가, 시인이자 작가이다. <br>
+     인목대비의 폐위에 반대하면서 상소를 올렸다는 이유로 북청으로 귀양을 가게 되었다. <br>
+     이러한 상황 속에서도 연군을 주제로 한 시를 쓰는 등 임금에 대한 그리움의 정서를 보여줬다.<br> 
+     대표작으로는 <오성과 한음>, ‘백사집’ 등이 있으며 권율의 사위로 알려져 있다. </p>
+
+
+  </div>
+
+  <div class="container" id="endScreen_3">
+    <h1><심리테스트 결과></h1>
+    <img src="3.jpg" width=40% height=40%>
+    <p>당신에게 시인 김지하를 추천합니다!</p>
+
+    <p>자유로움, 비상, 정치<br><br>
+     수업시간에 배운 작품: 새<br>
+     본명은 김영일이며 대한민국의 시인이다. <br>
+     학생 운동과 민주화 운동에도 참여한 전적이 있을 정도로 현실의 억압에 대한 절망과 자유를 갈망하는 사람으로 볼 수 있다. <br>
+     이러한 경향은 그의 작품에서 많이 들어나는데 대표 작품으로는 ‘타는 목마름으로’, ‘시삼백’, ‘오적’ 등이 있다. </p>
+     <img src="3_1.jpg" width=40% height=40%><br>
+
+  </div>
+
+  <div class="container" id="endScreen_4">
+    <h1><심리테스트 결과></h1>
+    <img src="4.jpg" width=40% height=40%>
+    <p>당신에게 시인 정극인을 추천합니다!</p>
+
+    <p>자연친화, 흥취, 평화로움<br><br>
+     수업시간에 배운 작품: 상춘곡<br>
+     조선시대 문신이며 성균관에 입학하였다. <br>
+     1437년 세종대왕 흥천사 중건을 위한 토목공사에 대해 유생들과 부당함을 주장하다가 쫓겨나 귀양을 가게 되었다. <br>
+     정치사에서보다 문학사에서의 위상이 더 높고 선비로서 청렴한 삶을 고수하고 검소하며 소박한 삶을 살았다고 알려져 있다. <br>
+     대표 작품으로는 ‘불우헌가’, 한림별곡체의 ‘불우헌곡’ 등이 있다.</p>
+
+
+  </div>
+
+  <div class="container" id="endScreen_5">
+    <h1><심리테스트 결과></h1>
+    <img src="5.jpg" width=40% height=40%>
+    <p>당신에게 시인 윤선도를 추천합니다!</p>
+
+    <p>자연친화, 의지, 학문<br><br>
+     수업시간에 배운 작품: 만흥<br>
+     정철, 박인로, 송순과 함께 조선 시조시가의 대표로 꼽히며 대표작으로는 ‘오우가’, ‘어부사시사’ 등이 있다. <br>
+     남인 중진 문신으로 예송 논쟁 당시 송시열이 효종의 정통성을 부정하는 상소를 올려 다른 남인들과 서인의 맹공으로 인해 유배를 당하게 된다. <br>
+     유배지에서도 좌절하지 않고 학문 연구와 시문을 계속 지으며 소일한 것으로 알려져 있다. </p>
+     <img src="5_1.jpg" width=40% height=40%><br>
+
+  </div>
+
+  <div class="container" id="endScreen_6">
+    <h1><심리테스트 결과></h1>
+    <img src="6.jpg" width=40% height=40%>
+    <p>당신에게 시인 황진이를 추천합니다!</p>
+
+    <p>재능, 예술성, 애정<br><br>
+     수업시간에 배운 작품: ‘청산리 벽계수야 수이 감을 자랑마라’<br>
+     기생으로 조선 전기 시인이자 예술가이며 조선 최고 여류시인이다. <br>
+     가상의 인물인지 실존 인물인지 아직 정확하게 파악이 되진 않았지만 매우 뛰어난 미모와 시, 서예, 음악에 대한 재능이 있었다. <br>
+     대표작으로는 ‘만월대 회고시’, ‘동지달 기나긴 밤을 한허리를 베어내어’, ‘영반월’ 등이 있다. </p>
+     <img src="6_1.jpg" width=40% height=40%><br>
+
+  </div>
+
+  <div class="container" id="endScreen_7">
+    <h1><심리테스트 결과></h1>
+    <img src="7.jpg" width=40% height=40%>
+    <p>당신에게 시인 정철을 추천합니다!</p>
+
+    <p>연군, 여성화자, 외향적<br><br>
+     수업시간에 배운 작품: 사미인곡, 속미인곡<br>
+     조선시대 우의정, 좌의정, 전라도체찰사 등을 역임한 문신이다. <br>
+     작품이나 이름과 달리 간사하고 흉악하고 독하며 노는 것을 좋아한 것으로 알려져 있다. <br>
+     을사사화에 계림군이 관련 되어 아버지와 큰형이 유배 되었었는데 정철은 아버지를 따라 유배를 갔다. <br>
+     대표작으로는 ‘성산별곡‘, ‘관동별곡‘ 등이 있으며 인간미, 자연미, 멋스런 호방함을 담아낸 작품이 많아 폭넓은 사대부의 정신세계를 보여준다.</p>
+     <img src="7_1.jpg" width=40% height=40%><br>
+
+  </div>
+
+  <div class="container" id="endScreen_8">
+    <h1><심리테스트 결과></h1>
+    <img src="8.jpg" width=40% height=40%>
+    <p>당신에게 시인 황동규를 추천합니다!</p>
+
+    <p>성숙함, 감수성<br><br>
+     수업시간에 배운 작품: 즐거운 편지<br>
+     대한민국의 시인, 영문학자, 대학 교수이다. <br>
+     대표작품으로는 <풍장>, <삼남에 내리는 눈>이 있고, 아버지가 <소나기>로 유명한 황순원 소설가이다. <br>
+     현대시사의 맥락을 형성했으며 독특한 양식으로 현대시의 방법적, 인식적 지평을 확대했다는 점에서 지속적인 관심을 받아오고 있으며, <br>
+     1980년도에 한국문학상을 수상하기도 했다.</p>
+     <img src="8_1.jpg" width=40% height=40%><br>
+  </div>
+
+  <div class="container" id="endScreen_9">
+    <h1><심리테스트 결과></h1>
+    <img src="9.jpg" width=40% height=40%>
+    <p>당신에게 시인 박목월을 추천합니다!</p>
+
+    <p>교육, 다정함, 내향적<br><br>
+     수업시간에 배운 작품: 이별가<br>
+     대한민국의 시인이자, 교사이자, 대학 교수이다. <br>
+     군가 <전우>, 포스코, 한국일보, MBC의 사가, 신정고등학교 교가 등을 작사하였으며, 교과서에 실린 작품인 <가정>의 작사가이기도 한다. <br>
+     대통령 찬가 또한 작사하여 권력에 아첨하는 시인 아니냐는 비판을 받기도 했다. <br>
+     언제나 누구에게나 호인으로 성품이 아주 뛰어난 것으로 알려져 있다. <br>
+     대표작품으로는 ‘송아지’, ‘청노루’, ‘나그네’가 있다. 윤여정 배우가 그의 제자로 알려져 있다. 
+     </p>
+     <img src="9_1.jpg" width=40% height=40%><br>
+  </div>
+
+  <div class="container" id="endScreen_10">
+    <h1><심리테스트 결과></h1>
+    <img src="10.jpg" width=40% height=40%>
+    <p>당신에게 시인 조위를 추천합니다!</p>
+
+    <p>지도자, 명작가<br><br>
+     수업시간에 배운 작품: 만분가<br>
+     조선 초기 문신이며 도승지, 충청도관찰사, 동지중추부사 등을 역임하였다. <br>
+     성종의 명령으로 김종직 문집 편찬 시 ‘조의제문’을 실어 무오사화의 화근이 된 것으로 유명하다. <br>
+     대표작품 중 하나인 <매계집>은 신라 말기 해인사와 신라왕실, 진성여왕과 위홍의 관계를 증언해주는 주요 자료로 사용된다. <br>
+     하정사로 명나라에 다녀오다가 잡혀 의주와 순천에 유배 되어 그 곳에서 병으로 생을 마감하였다.
+     </p>
+
+  </div>
+
+  <div class="container" id="endScreen_11">
+    <h1><심리테스트 결과></h1>
+    <img src="11.jpg" width=40% height=40%>
+    <p>당신에게 시인 양태사를 추천합니다!</p>
+
+    <p>감수성, 섬세함<br><br>
+     수업시간에 배운 작품: 야청도의성 <br>
+     발해 문왕 시절 귀덕장군으로 시인으로 활동했고 대표작으로는 시집 ‘경국집’이 있다. <br>
+     ‘야청도의성’은 발해사 연구 뿐만 아니라 시문학 연구에 귀중한 자료가 되는 뛰어난 시로 평가 받는다. <br>
+     외교관 시절 일본 사절단으로 갔을 때 지은 한시이다.</p>
+  </div>
+
+
+  <script>
+           // 공용변수
+           yloption = [];  // javascript 배열 https://app-dev.tistory.com/41
+           dict = [0,0,0,0,0,0,0,0,0,0,0,0];
+           //index
+           //0 윤동주
+           //1 이상
+           //2 이항복
+           //3 김지하
+           //4 정극인
+           //5 윤선도
+           //6 황진이
+           //7 정철
+           //8 황동규
+           //9 박목월
+           //10 조위
+           //11 양태사
+           ans = {
+             option1_1:[0,1,2],
+             option1_2:[3,4,5],
+             option1_3:[6,7,8],
+             option1_4:[9,10,11],
+             option2_1:[6,8,2],
+             option2_2:[3,7,11],
+             option2_3:[4,5,9],
+             option2_4:[1,10,0],
+             option3_1:[2,11,8],
+             option3_2:[7,1,6],
+             option3_3:[5,0,9],
+             option3_4:[3,4,10],
+             option4_1:[2,11,9],
+             option4_2:[3,5,10],
+             option4_3:[0,7,6],
+             option4_4:[1,4,8],
+             option5_1:[8,5,11],
+             option5_2:[1,6,0],
+             option5_3:[7,9,3],
+             option5_4:[4,2,10],
+             optionlast_1:[4,7,6],
+             optionlast_2:[10,5,0],
+             optionlast_3:[8,11,9],
+             optionlast_4:[3,1,2]
+           }
+           function score(x){
+             for (var i = 0; i<x.length; i++){
+               dict[x[i]]+=1;
+             }
+
+           }
+
+           function yfnext(opt, val) {
+              console.log('opt val : ' + opt + ' , ' + val);
+               // 단순히 빈문자열( ' ' ), null 값, 정의되지 않은 값(undefined)
+               if( val == "" || val == null || val == undefined || ( val != null && typeof val == "object" && !Object.keys(val).length ) ){
+                   alert("아무것도 선택되지 않았습니다! 선택후 '다음'을 클릭하세요!");
+               } else {
+                   console.log(yloption);
+                   if (opt == 'option1') {
+                       yloption[0] = val;
+                       $("#div_question1").hide()
+                       $("#div_question2").show()
+                   } else if (opt == 'option2') {
+                       yloption[1] = val;
+                       $("#div_question2").hide()
+                       // $("#div_question3").show()
+                       $("#div_question3").show()
+                   } else if (opt == 'option3') {
+                      yloption[2] = val;
+                      $("#div_question3").hide()
+                      $("#div_question4").show()
+                    } else if (opt == 'option4') {
+                       yloption[3] = val;
+                       $("#div_question4").hide()
+                       $("#div_question5").show()
+                     } else if (opt == 'option5') {
+                        yloption[4] = val;
+                        $("#div_question5").hide()
+                        $("#div_questionlast").show()
+                   }  else if (opt == 'optionlast') {
+                       yloption[5] = val;
+                       $("#div_questionlast").hide()
+                       $("#div_questionlast").hide()
+                       $("#endScreen_0").hide()
+                       $("#endScreen_1").hide()
+                       $("#endScreen_2").hide()
+                       $("#endScreen_3").hide()
+                       $("#endScreen_4").hide()
+                       $("#endScreen_5").hide()
+                       $("#endScreen_6").hide()
+                       $("#endScreen_7").hide()
+                       $("#endScreen_8").hide()
+                       $("#endScreen_9").hide()
+                       $("#endScreen_10").hide()
+                       $("#endScreen_11").hide()
+
+                   }
+               }
+           }
+           $(document).ready(function() {
+
+               $("#btn_next1").click(function() {
+                   console.log('Clicked btn_next1 !!!')
+                   var optvalue = $("input[name='optradio1']:checked").val();
+                   yfnext('option1', optvalue);
+                   score(ans[optvalue]);
+                   console.log(dict)
+
+               });
+
+               $("#btn_next2").click(function() {
+                   console.log('Clicked btn_next2 !!!')
+                   var optvalue = $("input[name='optradio2']:checked").val();
+                   yfnext('option2', optvalue);
+                   score(ans[optvalue]);
+                   console.log(dict)
+               });
+
+
+
+               $("#btn_next3").click(function() {
+                   console.log('Clicked btn_next3 !!!')
+                   var optvalue = $("input[name='optradio3']:checked").val();
+                   yfnext('option3', optvalue);
+                   score(ans[optvalue]);
+                   console.log(dict)
+
+               });
+
+
+
+               $("#btn_next4").click(function() {
+                   console.log('Clicked btn_next4 !!!')
+                   var optvalue = $("input[name='optradio4']:checked").val();
+                   yfnext('option4', optvalue);
+                   score(ans[optvalue]);
+                   console.log(dict)
+
+               });
+
+               $("#btn_next5").click(function() {
+                   console.log('Clicked btn_next5 !!!')
+                   var optvalue = $("input[name='optradio5']:checked").val();
+                   yfnext('option5', optvalue);
+                   score(ans[optvalue]);
+                   console.log(dict)
+
+               });
+
+
+               $("#btn_next_last").click(function() {
+                   console.log('Clicked btn_next_last !!!')
+                   $("#div_result").text('결과는 ???')
+                   var optvalue = $("input[name='optradiolast']:checked").val();
+                   yfnext('optionlast', optvalue);
+                   score(ans[optvalue]);
+                   console.log(dict)
+
+                   console.log(yloption);
+
+                   var max = dict[0];
+                   var x = 0;
+
+                   for (var i=0; i<dict.length; i++){
+
+                     if(max < dict[i]) {
+                       max = dict[i];
+                       x = i;
+                     }
+                   }
+                   //console.log(x)
+                   //$("#div_result").text('결과는 ' + x)
+
+                   if (x == 0) {
+                     $("#endScreen_0").show()
+                   }
+
+                   if (x == 1) {
+                     $("#endScreen_1").show()
+                   }
+
+                   if (x == 2) {
+                     $("#endScreen_2").show()
+                   }
+
+                   if (x == 3) {
+                     $("#endScreen_3").show()
+                   }
+                   if (x == 4) {
+                     $("#endScreen_4").show()
+                   }
+                   if (x == 5) {
+                     $("#endScreen_5").show()
+                   }
+                   if (x == 6) {
+                     $("#endScreen_6").show()
+                   }
+                   if (x == 7) {
+                     $("#endScreen_7").show()
+                   }
+                   if (x == 8) {
+                     $("#endScreen_8").show()
+                   }
+                   if (x == 9) {
+                     $("#endScreen_9").show()
+                   }
+                   if (x == 10) {
+                     $("#endScreen_10").show()
+                   }
+                   if (x == 11) {
+                     $("#endScreen_11").show()
+                   }
+
+
+
+
+               } );
+             });
+  <!-- -->
+      </script>
+
+
+
+
+   </main>
+
+
+  </body>
+</html>
